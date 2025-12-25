@@ -1,0 +1,488 @@
+/* ===============================
+   БАЗОВЫЕ ПЕРЕМЕННЫЕ И СБРОС
+================================ */
+
+:root {
+    --primary: #6a00ff;
+    --primary-dark: #5200c9;
+    --background: #f4f2fb;
+    --surface: #ffffff;
+    --text-main: #1f1f1f;
+    --text-muted: #6b6b6b;
+    --border-radius: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--background);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* ===============================
+   ОБЩИЕ ЭЛЕМЕНТЫ
+================================ */
+
+
+main.container {
+    background: var(--surface);
+    margin: 24px auto;
+    padding: 24px;
+    border-radius: var(--border-radius);
+    max-width: 900px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+h2 {
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+p {
+    margin-bottom: 14px;
+}
+
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 16px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* ===============================
+   БЛОК ПРИМЕРА
+================================ */
+
+.example {
+    background: #f0eaff;
+    border-left: 4px solid var(--primary);
+    padding: 16px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+/* ===============================
+   НАВИГАЦИЯ
+================================ */
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    gap: 12px;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: var(--primary-dark);
+}
+
+button:disabled {
+    background: #c9c9c9;
+    cursor: not-allowed;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+
+footer {
+    text-align: center;
+    margin: 20px 0 40px;
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* ==========================================================
+   📱 МОБИЛЬНЫЕ УСТРОЙСТВА (до 767px) — ПО УМОЛЧАНИЮ
+========================================================== */
+
+@media (max-width: 767px) {
+
+    header {
+        padding: 16px;
+        font-size: 18px;
+    }
+
+    main.container {
+        margin: 16px;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+
+    .example {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================================
+   📲 ПЛАНШЕТЫ (768px – 1023px)
+========================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    header {
+        padding: 22px;
+        font-size: 20px;
+    }
+
+    main.container {
+        max-width: 720px;
+        padding: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 12px 20px;
+    }
+}
+
+/* ==========================================================
+   💻 ПК И НОУТБУКИ (1024px и выше)
+========================================================== */
+
+@media (min-width: 1024px) {
+
+    header {
+        padding: 28px;
+        font-size: 22px;
+    }
+
+    main.container {
+        max-width: 900px;
+        padding: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
+
+
+
+
+
+
+
+
+:root {
+    --primary: #6a1b9a;
+    --primary-dark: #4a148c;
+    --primary-light: #d1b3ff;
+    --text-light: #ffffff;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 24px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--text-light);
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* ===== ЛЕВАЯ ЧАСТЬ ===== */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    max-width: 90px;
+    border-radius: 8px;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.course-nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.course-menu {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== ССЫЛКИ ===== */
+.course-menu a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    padding: 6px 2px;
+    transition: color 0.25s ease;
+}
+
+/* Линия снизу */
+.course-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    background: var(--primary-light);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.course-menu a:hover::after {
+    width: 100%;
+}
+
+.course-menu a.active {
+    font-weight: 600;
+}
+
+.course-menu a.active::after {
+    width: 100%;
+    background: #ffffff;
+}
+
+/* ===== БУРГЕР ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: 16px;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: var(--text-light);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 900px) {
+
+    .logo {
+        max-width: 72px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .course-menu {
+        position: absolute;
+        top: 56px;
+        right: 0;
+
+        flex-direction: column;
+        gap: 10px;
+
+        background: var(--primary-dark);
+        padding: 14px;
+        border-radius: 14px;
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+        display: none;
+        min-width: 180px;
+    }
+
+    .course-menu.show {
+        display: flex;
+    }
+
+    .course-menu a {
+        font-size: 1rem;
+    }
+
+    .course-menu a::after {
+        bottom: 0;
+    }
+}
+
+
+/* 
+
+
+.course-nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    padding: 6px 4px;
+    transition: color 0.25s ease;
+}
+
+.course-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    background: #d1b3ff;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.course-nav a:hover::after {
+    width: 100%;
+}
+
+.course-nav a.active {
+    font-weight: 600;
+    color: #e9d8ff;
+}
+
+.course-nav a.active::after {
+    width: 100%;
+    background: #ffffff;
+} */
+h3 {
+    color: #34495e;
+    margin-top: 25px;
+    font-size: 1.75em;
+}
+h4 {
+    color: #3b5998;
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+pre {
+    margin: 0;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 3px;
+    overflow-x: auto;
+}
+
+
+
+
+/* Общие стили для таблицы */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 14px;
+}
+
+/* Границы таблицы и ячеек */
+table, th, td {
+  border: 1px solid #999;
+}
+
+/* Заголовки таблицы */
+th {
+  background-color: #ddeeff;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Ячейки таблицы */
+td {
+  padding: 8px;
+}
+
+/* Адаптивность: для экранов меньше 600px */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  /* Убираем границы для блоков */
+  table {
+    border: none;
+  }
+  /* Заголовки скрываем, а их содержимое отображается внутри ячейки */
+  thead {
+    display: none;
+  }
+  tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+  }
+  td {
+    /* создаем псевдоэлемент для заголовка */
+    position: relative;
+    padding-left: 50%;
+    border: none;
+  }
+  td::before {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    content: attr(data-label);
+  }
+}
